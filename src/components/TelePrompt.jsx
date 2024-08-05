@@ -73,7 +73,7 @@ const TelePrompt = () => {
 		<>
 			<header className="fixed top-0 left-0 w-full py-5 flex flex-row justify-center gap-10   ">
 				<Link
-					to="/"
+					to="/TelePrompter"
 					className=" px-4 py-2 bg-blue-600 text-white rounded-md w-20">
 					Home
 				</Link>

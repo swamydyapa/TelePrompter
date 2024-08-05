@@ -16,11 +16,11 @@ const router = createBrowserRouter([
 		errorElement: <ErrorPage />, // Add error handling here
 		children: [
 			{
-				path: "/",
+				path: "/TelePrompter",
 				element: <Container />,
 			},
 			{
-				path: "/TelePrompter/",
+				path: "/TelePrompter/telePrompt",
 				element: <TelePrompt />,
 			},
 		],
