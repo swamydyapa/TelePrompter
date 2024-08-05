@@ -20,7 +20,7 @@ const router = createBrowserRouter([
 				element: <Container />,
 			},
 			{
-				path: "/telePrompter",
+				path: "/TelePrompter/",
 				element: <TelePrompt />,
 			},
 		],

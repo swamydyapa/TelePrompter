@@ -68,6 +68,7 @@ const TelePrompt = () => {
 		document.addEventListener("keydown", handleKeyDown);
 		return () => document.removeEventListener("keydown", handleKeyDown);
 	}, [isPaused]);
+
 	return (
 		<>
 			<header className="fixed top-0 left-0 w-full py-5 flex flex-row justify-center gap-10   ">
@@ -136,14 +137,9 @@ const TelePrompt = () => {
 					ref={textRef}
 					value={value || "Text not found"}
 					readOnly
-					className="text-center w-10/12 bg-transparent focus:outline-none border-none text-white h-full "
-					onChange={(e) => setText(e.target.value)}
-					style={{
-						overflow: "hidden",
-						fontSize: `${fontSize}px`,
-						paddingTop: "30%",
-						paddingBottom: "30%",
-					}}></textarea>
+					className={`text-center w-10/12 bg-transparent focus:outline-none border-none text-white h-full overflow-hidden pt-[30%] pb-[30%]`}
+					style={{ fontSize: `${fontSize}px` }}
+					onChange={(e) => setText(e.target.value)}></textarea>
 			</div>
 		</>
 	);
