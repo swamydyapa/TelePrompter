@@ -44,20 +44,26 @@ const TelePrompt = () => {
 		}
 	};
 
+	// To Manage the automatic scrolling behavior.
 	useEffect(() => {
+		// Check if the scrolling is active and if the textRef reference is available.
 		if (isScrolling && textRef.current) {
+			// Initialize scrollTop to get the current scroll position of the text area.
 			let scrollTop = textRef.current.scrollTop;
-
+			// Set up an interval that runs every 50 milliseconds to handle the scrolling.
 			const intervalId = setInterval(() => {
-				//start the scrolling where the user left of
+				// start the scrolling where the user left of
+				// Checks if the scroll position has reached the bottom of the text area or if scrolling is paused. If either condition is met, the interval is cleared and scrolling is stopped.
 				if (scrollTop >= textRef.current.scrollHeight || isPaused) {
 					clearInterval(intervalId);
 					setIsScrolling(isPaused);
 					return;
 				}
-				//scrollIncrement to increase the speed of the scrolling
+				//scrollIncrement to increase the speed of the scrolling This allows dynamic adjustment of the scroll speed.
 				const scrollIncrement = 1 + parseFloat(rangeValue);
 				scrollTop += scrollIncrement;
+
+				// Updates the text area's scroll position to the new value.
 				textRef.current.scrollTop = scrollTop;
 			}, 50);
 			return () => clearInterval(intervalId);
