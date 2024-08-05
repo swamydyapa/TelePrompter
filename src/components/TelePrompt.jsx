@@ -7,6 +7,7 @@ import {
 } from "react-icons/bi";
 import { useContext, useEffect, useRef, useState } from "react";
 import { ValueContext } from "../contextApi";
+import { Link } from "react-router-dom";
 
 const TelePrompt = () => {
 	const textRef = useRef(null);
@@ -70,10 +71,15 @@ const TelePrompt = () => {
 	return (
 		<>
 			<header className="fixed top-0 left-0 w-full py-5 flex flex-row justify-center gap-10   ">
+				<Link
+					to="/"
+					className=" px-4 py-2 bg-blue-600 text-white rounded-md w-20">
+					Home
+				</Link>
 				<button
 					className={`block border-1 ${
 						isPaused ? "bg-blue-400" : "bg-orange-400"
-					}  px-4 py-1 text-gray-50`}>
+					}  px-4 py-1 text-gray-50 rounded-md`}>
 					{isPaused ? <HiPlay size={25} /> : <HiPause size={25} />}
 				</button>
 
@@ -115,7 +121,7 @@ const TelePrompt = () => {
 							textRef.current.scrollTop = 0;
 						}
 					}}
-					className="bg-red-600 px-3 text-gray-50 ">
+					className="bg-red-600 px-3 text-gray-50 rounded-md ">
 					<BiSolidRectangle size={20} />
 				</button>
 			</header>

@@ -22,7 +22,7 @@ const Container = () => {
 					onChange={(e) => setValue(e.target.value)}></textarea>
 
 				<Link
-					to="/telePrompt"
+					to="/telePrompter"
 					className="w-full px-4 py-2 bg-blue-600 text-white rounded-md ">
 					Generate
 				</Link>
